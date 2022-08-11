@@ -1,0 +1,1568 @@
+{
+  "geometry_type": "geojson",
+  "rotation_type": "rotation_json",
+  "custom_fertilizer_type": "json",
+  "generate_report": false,
+  "field": "Enter Field Name or ID",
+  "generated_for": "Enter Grower Name",
+  "location": null,
+  "grower": "Enter Grower Name",
+  "json": {
+    "geojson": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -83.59269479028383,
+            31.433919588440812
+          ],
+          [
+            -83.59181502572694,
+            31.43435899360661
+          ],
+          [
+            -83.59093526117006,
+            31.434871630363475
+          ],
+          [
+            -83.59027007333437,
+            31.435292722745032
+          ],
+          [
+            -83.58992675058046,
+            31.43527441441996
+          ],
+          [
+            -83.58945468179384,
+            31.434139291281188
+          ],
+          [
+            -83.58889678231874,
+            31.43309569820341
+          ],
+          [
+            -83.58810284845033,
+            31.431026786352824
+          ],
+          [
+            -83.58825305215517,
+            31.430880312986755
+          ],
+          [
+            -83.58947613946596,
+            31.430678911734717
+          ],
+          [
+            -83.59037736169496,
+            31.431338041495938
+          ],
+          [
+            -83.59095671884218,
+            31.432583051734508
+          ],
+          [
+            -83.59269479028383,
+            31.433919588440812
+          ]
+        ]
+      ]
+    },
+    "plantable_acres": {
+      "value": "26.08",
+      "unit": "acre"
+    },
+    "slope": {
+      "value": "3.0",
+      "unit": "%"
+    },
+    "slope_length": {
+      "value": "200",
+      "unit": "foot"
+    },
+    "texture_id": "4",
+    "Rotation": [
+      {
+        "year": "2019",
+        "crop_id": "6",
+        "previous_crop_residue_burned": false,
+        "previous_yield": null,
+        "previous_crop_id": null,
+        "predominant_rotation_practice_id": "2",
+        "cover_crop": true,
+        "cover_crop_species_id": "1",
+        "cover_crop_establish_timing_id": "2",
+        "tillage_class_id": "1",
+        "conservation_practice_ids": [],
+        "wind_barrier": false,
+        "tile_drainage_id": "1",
+        "nutrient_plan": true,
+        "nutrient_4r_ids": [
+          "1",
+          "4",
+          "3",
+          "2"
+        ],
+        "n_carry_over": {
+          "value": null,
+          "unit": "lb/ac"
+        },
+        "p_soil_test_level_id": null,
+        "p_multi_crop_application_id": null,
+        "management_technique_ids": [],
+        "integrated_pest_management_id": "7",
+        "land_conversion": false,
+        "land_conversion_type_id": null,
+        "land_conversion_acres": null,
+        "wildlife_habitat_ids": [],
+        "lime_year_applied": "2019",
+        "lime_years_applicable": {
+          "value": "1",
+          "unit": "year"
+        },
+        "lime_amount": {
+          "value": "0.5",
+          "unit": "short_ton / acre"
+        },
+        "is_irrigated": true,
+        "seeding_rate_id": "101",
+        "seed_treatment": true,
+        "manureApps": [],
+        "water_source_id": "1",
+        "irrigation_water_conservation": false,
+        "irrigation_energy": true,
+        "irrigation": {
+          "value": "5.0",
+          "unit": "acre_inch / acre"
+        },
+        "irrigation_energy_exact": false,
+        "pump_pressure_id": "6",
+        "pumping_depth_id": "5",
+        "energy_source_id": "1",
+        "irrigation_fuel_id": null,
+        "irrigation_electric_amt": {
+          "value": 0,
+          "unit": "kWh"
+        },
+        "irrigation_fuel_amt": {
+          "value": 0,
+          "unit": "gal"
+        },
+        "secondary_irrigation_energy": false,
+        "secondary_irrigation": {
+          "value": null,
+          "unit": "ac_in/ac"
+        },
+        "secondary_irrigation_energy_exact": false,
+        "secondary_pump_pressure_id": null,
+        "secondary_pumping_depth_id": null,
+        "secondary_energy_source_id": null,
+        "secondary_irrigation_fuel_id": null,
+        "secondary_irrigation_electric_amt": {
+          "value": null,
+          "unit": "kWh"
+        },
+        "secondary_irrigation_fuel_amt": {
+          "value": null,
+          "unit": "gal"
+        },
+        "trans_back_haul": false,
+        "trans_fuel_type_id": "3",
+        "field_to_pos_distance": {
+          "value": "15.0",
+          "unit": "mile"
+        },
+        "drying_energy_source_id": null,
+        "drying_systems_id": null,
+        "drying_fuel_id": null,
+        "drying_fuel_amt": {
+          "value": null,
+          "unit": "gal"
+        },
+        "crop_level_moisture_diff": {
+          "value": null,
+          "unit": "%"
+        },
+        "yield": {
+          "value": "4700.0",
+          "unit": "lb / acre"
+        },
+        "drying_electric_amt": {
+          "value": null,
+          "unit": "kWh"
+        },
+        "abandoned_harvested_acres": {
+          "value": null,
+          "unit": "ac"
+        },
+        "reason_id": null,
+        "est_non_irrigated_yield": {
+          "value": "3400.0",
+          "unit": "lb / acre"
+        },
+        "peanuts_initial_moisture": {
+          "value": "15.0",
+          "unit": "%"
+        },
+        "applicationTrips": [
+          {
+            "fertilizer_app_timing_id": "5",
+            "fertilizer_app_method_id": null,
+            "protApps": [
+              {
+                "herbicide_apps": 1,
+                "insecticide_apps": 0,
+                "fungicide_apps": 0,
+                "growth_reg_apps": 0,
+                "fumigant_apps": 0
+              }
+            ],
+            "fertApps": []
+          },
+          {
+            "fertilizer_app_timing_id": "6",
+            "fertilizer_app_method_id": null,
+            "protApps": [
+              {
+                "herbicide_apps": 0,
+                "insecticide_apps": 0,
+                "fungicide_apps": 1,
+                "growth_reg_apps": 0,
+                "fumigant_apps": 0
+              }
+            ],
+            "fertApps": []
+          },
+          {
+            "fertilizer_app_timing_id": "6",
+            "fertilizer_app_method_id": null,
+            "protApps": [
+              {
+                "herbicide_apps": 0,
+                "insecticide_apps": 0,
+                "fungicide_apps": 1,
+                "growth_reg_apps": 0,
+                "fumigant_apps": 0
+              }
+            ],
+            "fertApps": []
+          },
+          {
+            "fertilizer_app_timing_id": "6",
+            "fertilizer_app_method_id": null,
+            "protApps": [
+              {
+                "herbicide_apps": 0,
+                "insecticide_apps": 0,
+                "fungicide_apps": 1,
+                "growth_reg_apps": 0,
+                "fumigant_apps": 0
+              }
+            ],
+            "fertApps": []
+          },
+          {
+            "fertilizer_app_timing_id": "6",
+            "fertilizer_app_method_id": null,
+            "protApps": [
+              {
+                "herbicide_apps": 0,
+                "insecticide_apps": 0,
+                "fungicide_apps": 1,
+                "growth_reg_apps": 0,
+                "fumigant_apps": 0
+              }
+            ],
+            "fertApps": []
+          },
+          {
+            "fertilizer_app_timing_id": "6",
+            "fertilizer_app_method_id": null,
+            "protApps": [
+              {
+                "herbicide_apps": 0,
+                "insecticide_apps": 1,
+                "fungicide_apps": 1,
+                "growth_reg_apps": 0,
+                "fumigant_apps": 0
+              }
+            ],
+            "fertApps": []
+          },
+          {
+            "fertilizer_app_timing_id": "6",
+            "fertilizer_app_method_id": null,
+            "protApps": [
+              {
+                "herbicide_apps": 0,
+                "insecticide_apps": 1,
+                "fungicide_apps": 1,
+                "growth_reg_apps": 0,
+                "fumigant_apps": 0
+              }
+            ],
+            "fertApps": []
+          },
+          {
+            "fertilizer_app_timing_id": "6",
+            "fertilizer_app_method_id": null,
+            "protApps": [
+              {
+                "herbicide_apps": 0,
+                "insecticide_apps": 0,
+                "fungicide_apps": 1,
+                "growth_reg_apps": 0,
+                "fumigant_apps": 0
+              }
+            ],
+            "fertApps": []
+          },
+          {
+            "fertilizer_app_timing_id": "6",
+            "fertilizer_app_method_id": null,
+            "protApps": [
+              {
+                "herbicide_apps": 0,
+                "insecticide_apps": 1,
+                "fungicide_apps": 1,
+                "growth_reg_apps": 0,
+                "fumigant_apps": 0
+              }
+            ],
+            "fertApps": []
+          },
+          {
+            "fertilizer_app_timing_id": "6",
+            "fertilizer_app_method_id": null,
+            "protApps": [
+              {
+                "herbicide_apps": "0",
+                "insecticide_apps": "1",
+                "fungicide_apps": "1",
+                "growth_reg_apps": "0",
+                "fumigant_apps": "0"
+              }
+            ],
+            "fertApps": []
+          },
+          {
+            "fertilizer_app_timing_id": "6",
+            "fertilizer_app_method_id": null,
+            "protApps": [
+              {
+                "herbicide_apps": "0",
+                "insecticide_apps": "0",
+                "fungicide_apps": "1",
+                "growth_reg_apps": "0",
+                "fumigant_apps": "0"
+              }
+            ],
+            "fertApps": []
+          },
+          {
+            "fertilizer_app_timing_id": "6",
+            "fertilizer_app_method_id": null,
+            "protApps": [
+              {
+                "herbicide_apps": "0",
+                "insecticide_apps": "0",
+                "fungicide_apps": "1",
+                "growth_reg_apps": "0",
+                "fumigant_apps": "0"
+              }
+            ],
+            "fertApps": []
+          }
+        ],
+        "rotation_json": {
+          "events": [
+            {
+              "crop": null,
+              "date": "0001-05-10",
+              "residue": {
+                "id": "60",
+                "name": "weed residue; 0-3 mo"
+              },
+              "operation": {
+                "id": "22727",
+                "name": "Sprayer, pre-emergence",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 250,
+                "kill_crop": false,
+                "add_residue": true,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": {
+                "id": "804",
+                "name": "Peanut, runner",
+                "yieldUnit": "lb/ac",
+                "defaultYield": 2000
+              },
+              "date": "0001-05-15",
+              "residue": null,
+              "operation": {
+                "id": "22940",
+                "name": "Planter, strip till, subsoiler",
+                "stir": 26.2,
+                "opGroup1": "Seeding, planter",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": true
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-05-20",
+              "residue": {
+                "id": "60",
+                "name": "weed residue; 0-3 mo"
+              },
+              "operation": {
+                "id": "22726",
+                "name": "Sprayer, post emergence",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 250,
+                "kill_crop": false,
+                "add_residue": true,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-06-15",
+              "residue": {
+                "id": "60",
+                "name": "weed residue; 0-3 mo"
+              },
+              "operation": {
+                "id": "22726",
+                "name": "Sprayer, post emergence",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 250,
+                "kill_crop": false,
+                "add_residue": true,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-07-15",
+              "residue": {
+                "id": null,
+                "name": null
+              },
+              "operation": {
+                "id": "22718",
+                "name": "Sprayer, fungicide, insecticide tank mix",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-08-15",
+              "residue": {
+                "id": "60",
+                "name": "weed residue; 0-3 mo"
+              },
+              "operation": {
+                "id": "22726",
+                "name": "Sprayer, post emergence",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 250,
+                "kill_crop": false,
+                "add_residue": true,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-09-15",
+              "residue": {
+                "id": "60",
+                "name": "weed residue; 0-3 mo"
+              },
+              "operation": {
+                "id": "22726",
+                "name": "Sprayer, post emergence",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 250,
+                "kill_crop": false,
+                "add_residue": true,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-10-15",
+              "residue": null,
+              "operation": {
+                "id": "22840",
+                "name": "Harvest, shallow root crops, residue surface",
+                "stir": 13.75,
+                "opGroup1": "Harvest, crops",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": true,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": {
+                "id": "767",
+                "name": "Cotton",
+                "yieldUnit": "lb/ac lint",
+                "defaultYield": 750
+              },
+              "date": "0002-05-01",
+              "residue": null,
+              "operation": {
+                "id": "22940",
+                "name": "Planter, strip till, subsoiler",
+                "stir": 26.2,
+                "opGroup1": "Seeding, planter",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": true
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-05-15",
+              "residue": null,
+              "operation": {
+                "id": "22692",
+                "name": "Fert applic. side-dress, liquid",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-06-15",
+              "residue": {
+                "id": "60",
+                "name": "weed residue; 0-3 mo"
+              },
+              "operation": {
+                "id": "22726",
+                "name": "Sprayer, post emergence",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 250,
+                "kill_crop": false,
+                "add_residue": true,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-07-15",
+              "residue": null,
+              "operation": {
+                "id": "22724",
+                "name": "Sprayer, post emerge, insecticide",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-08-15",
+              "residue": null,
+              "operation": {
+                "id": "22724",
+                "name": "Sprayer, post emerge, insecticide",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-09-15",
+              "residue": {
+                "id": "60",
+                "name": "weed residue; 0-3 mo"
+              },
+              "operation": {
+                "id": "22726",
+                "name": "Sprayer, post emergence",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 250,
+                "kill_crop": false,
+                "add_residue": true,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-10-15",
+              "residue": null,
+              "operation": {
+                "id": "22717",
+                "name": "Sprayer, defoliant",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": true,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-11-01",
+              "residue": null,
+              "operation": {
+                "id": "22806",
+                "name": "Harvest, cotton",
+                "stir": 0.15,
+                "opGroup1": "Harvest, crops",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": true,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-12-01",
+              "residue": null,
+              "operation": {
+                "id": "22873",
+                "name": "Stalk chopper, residue, rolling, strips",
+                "stir": 24.96,
+                "opGroup1": "Residue, manage",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": true,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": {
+                "id": "767",
+                "name": "Cotton",
+                "yieldUnit": "lb/ac lint",
+                "defaultYield": 750
+              },
+              "date": "0003-05-01",
+              "residue": null,
+              "operation": {
+                "id": "22940",
+                "name": "Planter, strip till, subsoiler",
+                "stir": 26.2,
+                "opGroup1": "Seeding, planter",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": true
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-05-15",
+              "residue": null,
+              "operation": {
+                "id": "22692",
+                "name": "Fert applic. side-dress, liquid",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-06-15",
+              "residue": {
+                "id": "60",
+                "name": "weed residue; 0-3 mo"
+              },
+              "operation": {
+                "id": "22726",
+                "name": "Sprayer, post emergence",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 250,
+                "kill_crop": false,
+                "add_residue": true,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-07-15",
+              "residue": null,
+              "operation": {
+                "id": "22724",
+                "name": "Sprayer, post emerge, insecticide",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-08-15",
+              "residue": null,
+              "operation": {
+                "id": "22724",
+                "name": "Sprayer, post emerge, insecticide",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-09-15",
+              "residue": {
+                "id": "60",
+                "name": "weed residue; 0-3 mo"
+              },
+              "operation": {
+                "id": "22726",
+                "name": "Sprayer, post emergence",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 250,
+                "kill_crop": false,
+                "add_residue": true,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-10-15",
+              "residue": null,
+              "operation": {
+                "id": "22717",
+                "name": "Sprayer, defoliant",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": true,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-11-01",
+              "residue": null,
+              "operation": {
+                "id": "22806",
+                "name": "Harvest, cotton",
+                "stir": 0.15,
+                "opGroup1": "Harvest, crops",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": true,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-11-15",
+              "residue": null,
+              "operation": {
+                "id": "22873",
+                "name": "Stalk chopper, residue, rolling, strips",
+                "stir": 24.96,
+                "opGroup1": "Residue, manage",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": true,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-06-30",
+              "residue": null,
+              "operation": {
+                "id": "22718",
+                "name": "Sprayer, fungicide, insecticide tank mix",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-07-30",
+              "residue": null,
+              "operation": {
+                "id": "22722",
+                "name": "Sprayer, post emerge, fungicide",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-08-30",
+              "residue": null,
+              "operation": {
+                "id": "22722",
+                "name": "Sprayer, post emerge, fungicide",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-06-20",
+              "residue": null,
+              "operation": {
+                "id": "22718",
+                "name": "Sprayer, fungicide, insecticide tank mix",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-07-20",
+              "residue": null,
+              "operation": {
+                "id": "22722",
+                "name": "Sprayer, post emerge, fungicide",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-09-30",
+              "residue": null,
+              "operation": {
+                "id": "22722",
+                "name": "Sprayer, post emerge, fungicide",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-09-10",
+              "residue": null,
+              "operation": {
+                "id": "22722",
+                "name": "Sprayer, post emerge, fungicide",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-05-12",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-06-01",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-07-01",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-08-01",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0001-09-01",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-05-30",
+              "residue": null,
+              "operation": {
+                "id": "22723",
+                "name": "Sprayer, post emerge, growth regulator",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-06-30",
+              "residue": null,
+              "operation": {
+                "id": "22723",
+                "name": "Sprayer, post emerge, growth regulator",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-07-30",
+              "residue": null,
+              "operation": {
+                "id": "22723",
+                "name": "Sprayer, post emerge, growth regulator",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-08-30",
+              "residue": null,
+              "operation": {
+                "id": "22723",
+                "name": "Sprayer, post emerge, growth regulator",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-05-30",
+              "residue": null,
+              "operation": {
+                "id": "22723",
+                "name": "Sprayer, post emerge, growth regulator",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-06-30",
+              "residue": null,
+              "operation": {
+                "id": "22723",
+                "name": "Sprayer, post emerge, growth regulator",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-07-30",
+              "residue": null,
+              "operation": {
+                "id": "22723",
+                "name": "Sprayer, post emerge, growth regulator",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-08-30",
+              "residue": null,
+              "operation": {
+                "id": "22723",
+                "name": "Sprayer, post emerge, growth regulator",
+                "stir": 0.15,
+                "opGroup1": "Application, agchem, nutrient",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-04-25",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-05-10",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-06-20",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-07-20",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": "",
+                "opGroup3": "",
+                "opGroup4": "",
+                "opGroup5": "",
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-08-05",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-08-20",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0002-09-05",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-04-25",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-05-10",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-06-20",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-07-20",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-08-05",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-08-20",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            },
+            {
+              "crop": null,
+              "date": "0003-09-05",
+              "residue": null,
+              "operation": {
+                "id": "22733",
+                "name": "Irrigation (1 inch, Pivot, Linear, Wheelline)",
+                "stir": 0,
+                "opGroup1": "Application, irrigation",
+                "opGroup2": null,
+                "opGroup3": null,
+                "opGroup4": null,
+                "opGroup5": null,
+                "resAdded": 0,
+                "kill_crop": false,
+                "add_residue": false,
+                "begin_growth": false
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+"","id","name","type","default_units","max_error","max_flag"
+"1","1","Elemental Nitrogen","Dry fertilizers (lb/acre)","lb / acre",325,275
+"2","4","Anhydrous Ammonia","Commonly selected fertilizers","lb / acre",396,335
+"3","6","Urea 45-46% Nitrogen","Dry fertilizers (lb/acre)","lb / acre",722,611
+"4","7","Ammonium Nitrate","Dry fertilizers (lb/acre)","lb / acre",956,809
+"5","8","Ammonium Sulfate","Dry fertilizers (lb/acre)","lb / acre",1548,1310
+"6","9","Super-phosphate 20% phosphate","Dry fertilizers (lb/acre)","lb / acre",938,625
+"7","10","Triple Super-phosphate 44-46% phosphate","Dry fertilizers (lb/acre)","lb / acre",333,222
+"8","11","Diammonium phosphate DAP (18-46-0)","Dry fertilizers (lb/acre)","lb / acre",326,217
+"9","12","Other Phosphate Fertilizers (P2O5 rate)","Dry fertilizers (lb/acre)","lb / acre",150,100
+"10","13","Potassium chloride/muriate of potash 60% potassium","Commonly selected fertilizers","lb / acre",500,417
+"11","14","Potassium Other (K2O rate)","Dry fertilizers (lb/acre)","lb / acre",300,250
+"12","16","Mono-Ammonium Phosphate MAP (11-52-0)","Dry fertilizers (lb/acre)","lb / acre",288,192
+"13","17","10-10-10","Dry fertilizers (lb/acre)","lb / acre",3250,2750
+"14","18","20-10-10","Dry fertilizers (lb/acre)","lb / acre",1625,1375
+"15","19","20-20-0","Dry fertilizers (lb/acre)","lb / acre",1625,1375
+"16","20","10-20-20","Dry fertilizers (lb/acre)","lb / acre",3250,2750
+"17","21","15-15-15","Dry fertilizers (lb/acre)","lb / acre",2167,1833
+"18","22","19-19-19","Dry fertilizers (lb/acre)","lb / acre",1711,1447
+"19","23","8-32-16","Dry fertilizers (lb/acre)","lb / acre",469,313
+"20","24","6-24-10","Dry fertilizers (lb/acre)","lb / acre",625,417
+"21","25","0-10-40","Dry fertilizers (lb/acre)","lb / acre",750,625
+"22","26","0-20-20","Dry fertilizers (lb/acre)","lb / acre",750,500
+"23","27W","21-17-0","Dry fertilizers (lb/acre)","lb / acre",1548,1310
+"24","27","21-17-0","Fluid fertilizers (gal/acre)","gal / acre",141,119
+"25","28W","10-34-0","Dry fertilizers (lb/acre)","lb / acre",441,294
+"26","28","10-34-0","Fluid fertilizers (gal/acre)","gal / acre",40,27
+"27","29W","7-21-7","Dry fertilizers (lb/acre)","lb / acre",714,476
+"28","29","7-21-7","Fluid fertilizers (gal/acre)","gal / acre",65,43
+"29","30W","28-0-0","Dry fertilizers (lb/acre)","lb / acre",1161,982
+"30","30","28-0-0","Fluid fertilizers (gal/acre)","gal / acre",106,89
+"31","31W","29-0-0","Dry fertilizers (lb/acre)","lb / acre",1121,948
+"32","31","29-0-0","Fluid fertilizers (gal/acre)","gal / acre",102,86
+"33","32W","30-0-0","Dry fertilizers (lb/acre)","lb / acre",1083,917
+"34","32","30-0-0","Fluid fertilizers (gal/acre)","gal / acre",98,83
+"35","33W","31-0-0","Dry fertilizers (lb/acre)","lb / acre",1048,887
+"36","33","31-0-0","Fluid fertilizers (gal/acre)","gal / acre",95,81
+"37","34W","32-0-0","Dry fertilizers (lb/acre)","lb / acre",1016,859
+"38","34","32-0-0","Fluid fertilizers (gal/acre)","gal / acre",92,78
+"39","35","Custom N-P2O5-K2O Blend","Commonly selected fertilizers","lb / acre",NA,NA
+"40","36","Custom N-P2O5-K2O Rate","Commonly selected fertilizers","lb / acre",NA,NA
+"41","15","Potassium Nitrate","Dry fertilizers (lb/acre)","lb / acre",682,568
+"42","2","UAN 32%","Fluid fertilizers (gal/acre)","gal / acre",92,78
+"43","5","UAN 30%","Fluid fertilizers (gal/acre)","gal / acre",98,83
+"44","3","UAN 28%","Fluid fertilizers (gal/acre)","gal / acre",106,89
+"45","8L","Ammonium Sulfate - Liquid","Fluid fertilizers (gal/acre)","gal / acre",369,313

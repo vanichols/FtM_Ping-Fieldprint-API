@@ -1,0 +1,70 @@
+,id,name,units,crop_id
+1,37,<10,lb / acre,8
+2,38,10-15,lb / acre,8
+3,39,16-20,lb / acre,8
+4,40,21-25,lb / acre,8
+5,41,26-30,lb / acre,8
+6,42,>30,lb / acre,8
+7,24,80-99,lb / acre,48
+8,25,100-119,lb / acre,48
+9,26,120-140,lb / acre,48
+10,1,Less than 24000,seeds / acre,1
+11,2,24000 - 25999,seeds / acre,1
+12,3,26000 - 27999,seeds / acre,1
+13,4,28000 - 29999,seeds / acre,1
+14,5,30000 - 31999,seeds / acre,1
+15,6,32000 - 33999,seeds / acre,1
+16,7,34000 - 35999,seeds / acre,1
+17,8,36000 - 37999,seeds / acre,1
+18,9,38000 - 39999,seeds / acre,1
+19,10,40000 - 41999,seeds / acre,1
+20,11,42000 - 44000,seeds / acre,1
+21,12,More than 44000,seeds / acre,1
+22,75,0-9999,seeds / acre,4
+23,76,10000-19999,seeds / acre,4
+24,77,20000-29999,seeds / acre,4
+25,78,30000-39999,seeds / acre,4
+26,79,40000-49999,seeds / acre,4
+27,80,50000-59999,seeds / acre,4
+28,81,60000-69999,seeds / acre,4
+29,82,70000-79999,seeds / acre,4
+30,83,>80000,seeds / acre,4
+31,30,40-59,lb / acre,6
+32,31,60-79,lb / acre,6
+33,32,80-99,lb / acre,6
+34,33,100-119,lb / acre,6
+35,100,120-139,lb / acre,6
+36,101,140-159,lb / acre,6
+37,102,160-179,lb / acre,6
+38,103,180-200,lb / acre,6
+39,65,10-12.99,cwt / acre,41
+40,66,13-15.99,cwt / acre,41
+41,67,16-18.99,cwt / acre,41
+42,68,19-21.99,cwt / acre,41
+43,69,22-24.99,cwt / acre,41
+44,70,25-27.99,cwt / acre,41
+45,71,28-30.99,cwt / acre,41
+46,72,31-33.99,cwt / acre,41
+47,73,34-36.99,cwt / acre,41
+48,74,37-39.99,cwt / acre,41
+49,96,<=30,lb / acre,39
+50,97,31-60,lb / acre,39
+51,98,61-90,lb / acre,39
+52,99,>90,lb / acre,39
+53,34,4-5.9,lb / acre,5
+54,35,6-7.9,lb / acre,5
+55,36,8-10,lb / acre,5
+56,13,Less than 150000,seeds / acre,2
+57,14,150000 - 174999,seeds / acre,2
+58,15,175000 - 200000,seeds / acre,2
+59,16,More than 200000,seeds / acre,2
+60,27,40000-49999,seeds / acre,51
+61,28,50000-59999,seeds / acre,51
+62,29,60000-70000,seeds / acre,51
+63,17,Less than 850000,seeds / acre,3
+64,18,850000 - 999999,seeds / acre,3
+65,19,1000000 - 1249999,seeds / acre,3
+66,20,1250000 - 1499999,seeds / acre,3
+67,21,1500000 - 1749999,seeds / acre,3
+68,22,1750000 - 2000000,seeds / acre,3
+69,23,More than 2000000,seeds / acre,3

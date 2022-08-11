@@ -1,0 +1,15 @@
+"","id","name","yield_unit","crcrops.id","crcrops.name","crcrops.id.1","crcrops.name.1","crcrops.id.2","crcrops.name.2"
+"1","8","Alfalfa","short_ton / acre","738","Alfalfa, hay","737","Alfalfa, hay, release",NA,NA
+"2","48","Barley","bushel / acre","745","Barley, spring, grain","746","Barley, winter, grain",NA,NA
+"3","1","Corn (grain)","bushel / acre","763","Corn, grain, seed",NA,NA,NA,NA
+"4","46","Corn (silage)","short_ton / acre","765","Corn, silage",NA,NA,NA,NA
+"5","4","Cotton","lb / acre","767","Cotton",NA,NA,NA,NA
+"6","6","Peanuts","lb / acre","804","Peanut, runner",NA,NA,NA,NA
+"7","41","Potatoes","cwt / acre","807","Potato, tubers",NA,NA,NA,NA
+"8","39","Rice","cwt / acre","808","Rice, dwarf","809","Rice, semi-dwarf","810","Rice, tall"
+"9","5","Sorghum","bushel / acre","824","Sorghum, grain",NA,NA,NA,NA
+"10","2","Soybeans","bushel / acre","827","Soybean, grain",NA,NA,NA,NA
+"11","51","Sugar beets","short_ton / acre","831","Sugarbeet, sugar",NA,NA,NA,NA
+"12","10","Wheat (durum)","bushel / acre","853","Wheat, spring, grain",NA,NA,NA,NA
+"13","9","Wheat (spring)","bushel / acre","853","Wheat, spring, grain",NA,NA,NA,NA
+"14","3","Wheat (winter)","bushel / acre","854","Wheat, winter, grain",NA,NA,NA,NA

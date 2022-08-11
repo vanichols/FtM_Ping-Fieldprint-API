@@ -1,0 +1,611 @@
+---
+title: "Fieldprint Scenario Comparison Tool"
+author: "Eric Coronel - Field to Market"
+date: "August 31, 2020" # started on
+output:
+  html_document:
+    df_print: paged
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+## Components
+
+For the base payloads:
+
+* Import base payloads and assign them to output folders (minor changes applied like qdmp_request_id)
+* Create systematic payloads (fastest and easiest process) common to rainfed and irrigated systems
+* Create common payloads to rainfed and irrigated systems that require particular approaches to modify true/false, array parameters, and multiple parameters for a single change
+* Create systematic irrigated payloads for all possible parameters
+* Create crop-specific payloads
+* Create custom payloads, or payloads that require more than 1 parameter to change at a time
+
+For list of boundaries:
+
+* For a base payload with all its scenarios, replace the coordinates, remove other identifiers, remove soil data and plantable_acres parameter, replace the qdmp_request_id to a new boundary, and save it under a new field folder
+* Using a SSURGO functionality, append any available soil data given for each new field (the API response does not include SSURGO parameters)
+
+Output collection
+* For projects with < N payloads, run the process via asynchronous API requests
+* HEI could build a functionality where every night they check a shared folder, if there are payloads in that folder, they would send them to the API and collect the responses.
+
+## Packages and global options
+
+```{r packages, eval = T, message = F, warning = F, include = T}
+
+library(dplyr)
+
+# unlink(c("04_payloads", "05_pool_payloads", "06_SSURGO_payloads"), recursive = TRUE)
+```
+
+## Function for JSON export
+
+```{r json_function, eval = T, message = F, warning = F, include = T}
+
+# From https://rdrr.io/github/skgrange/threadr/src/R/write_json.R
+
+apo_write_json <- function(x, file, pretty = TRUE, na = FALSE, auto_unbox = FALSE) {
+  
+  # Factor vector
+  if ("factor" %in% class(x)) x <- as.character(x)
+  
+  # Factors within data frame
+  if (any(grepl("data.frame", class(x)))) {
+    
+    # Make factors strings
+    index_factor <- sapply(x, is.factor)
+    x[index_factor] <- lapply(x[index_factor], as.character)
+    
+  }
+  
+  # Make JSON object
+  if (na) {
+    
+    # Keep NAs, but make them null
+    json <- jsonlite::toJSON(
+      x, 
+      pretty = pretty, 
+      na = "null", 
+      null = "null",
+      auto_unbox = auto_unbox
+    )
+    
+  } else {
+    
+    # Drop NAs
+    json <- jsonlite::toJSON(x, pretty = pretty, auto_unbox = auto_unbox)
+    
+  }
+  
+  # Write JSON to disk
+  write(json, file)
+  
+  return(invisible(x))
+  
+}
+
+```
+
+## Function to check for non-zero variables
+
+```{r check_function, eval = T, message = F, warning = F, include = T}
+
+#It might be applicable later
+# check_function <- function(df){
+#   new_summary <- df %>% 
+#     group_by(crop, tillage_type, cover_crop) %>% 
+#     summarize_at(vars(yield_adjusted:potassium), var, na.rm = F) %>% 
+#     ungroup() %>% 
+#     select(-c(crop, tillage_type, cover_crop))
+#   
+#   xdel <- data.frame(new_summary != 0)
+#   xdel2 <- which(apply(xdel, 2, any))
+#   check2 <- names(new_summary[, xdel2])  
+# }
+
+```
+
+## Importing the base payloads
+
+```{r importing_base, eval = T, message = F, warning = F, include = T}
+
+# List payload names
+base_payloads <- list.files("./01_base_payloads", pattern = ".json")
+
+# Create short names
+base_payloads_short_names <- gsub(pattern = ".json", replacement = "", base_payloads)
+
+# Delete folders to re-test
+#unlink("04_payloads", recursive = TRUE)
+
+# Give it time to delete the folders
+#Sys.sleep(time = 4)
+
+# Creates folders to receive all other payloads, separated by starting payload
+dir.create("./04_payloads/field_base", recursive = TRUE)
+
+# Give it time to create the folders
+Sys.sleep(time = 2)
+
+for (i in 1:length(base_payloads_short_names)) {
+  dir.create(paste0("./04_payloads/field_base/", base_payloads_short_names[i]))
+}
+
+# Import payloads to the environment, also write them to each respective folder
+# This would be a place to start making modifications
+for (i in 1:length(base_payloads)) {
+  x1 <- jsonlite::fromJSON(paste0("./01_base_payloads/", base_payloads[i]))
+  x2 <- append(x = x1, 
+              values = list(qdmp_request_id = paste0("Base Payload ", base_payloads_short_names[i])),
+                      after = 8)
+  assign(paste0('base_payload_', base_payloads_short_names[i]), x2)
+  apo_write_json(x = x2, file = paste0("./04_payloads/field_base/", base_payloads_short_names[i],"/", "base_payload_",
+                                      base_payloads_short_names[i], ".json"), 
+                 pretty = T, na = T, auto_unbox = T)
+  rm(x1, x2)
+}
+
+```
+
+## Import reference tables
+What to do about rainfed? irrigated? crop specific? etc?
+Maybe first the options common to rainfed/irrigated, then irrigated, then crop specific, then custom scenarios
+
+```{r ref_tables, eval = T, message = F, warning = F, include = T}
+
+# Listing ref tables
+list_ref_tables <- list.files("03_ref_tables", pattern = ".csv")
+
+for (i in list_ref_tables) {
+  name <- gsub(".csv", "", i)
+  assign(name, read.csv(paste0("03_ref_tables/", i), header = TRUE, stringsAsFactors = FALSE)[,-c(1)])
+}
+
+# There will be more importing, maybe, or other modifications
+
+```
+
+## Creating systematic payloads (likely the easiest to create)
+
+These payloads apply to both rainfed and irrigated systems
+
+```{r systematic_payloads, eval = T, message = F, warning = F, include = T}
+
+systematic_ref_ids <- subset(ref_ids, test == 1 & type == "common")
+
+list_base_payloads <- head(ls(pattern = "base_payload"), n = 3) # need something better here
+
+for (w in 1:length(list_base_payloads)) {
+  
+  base_payload <- get(list_base_payloads[w])
+  
+  for (i in 1:nrow(systematic_ref_ids)) {
+  
+  payload_crop_id <- base_payload$json$Rotation$crop_id
+  # special case for seeding rates. It has to be filtered by crop
+  ref_data_SeedingRates_temp <- subset(ref_data_SeedingRates, crop_id == payload_crop_id)
+  #ref_data_SeedingRates_temp <- ref_data_SeedingRates %>% filter(crop_id %in% payload_crop_id)
+  
+  parameter <- systematic_ref_ids$payload_parameter[i]
+  
+  base_vector_option <- base_payload$json$Rotation[[parameter]]
+  
+  ref_table_name <- systematic_ref_ids %>% filter(payload_parameter == parameter) %>% pull(reference_table)
+  
+  parameter_options <- get(ref_table_name) %>% pull(id) %>% as.character()
+  
+  test_vector_options <- parameter_options[!parameter_options%in%base_vector_option]
+  
+  test_vector_options_names <- get(ref_table_name) %>% 
+    filter(id %in% test_vector_options) %>% 
+    pull(name) %>% 
+    as.character() %>% 
+    gsub(pattern = "\\.| |-|/|>|<|=|,", replacement = "_") %>% 
+    gsub(pattern = "__|___", replacement = "_") %>% 
+    substr(., 1, 50)
+    
+  for (j in seq_along(test_vector_options)) {
+    tmp <- base_payload
+    
+    tmp$json$Rotation[[parameter]] <- test_vector_options[j]
+    
+    export_name <- paste0("04_payloads/field_base/",base_payloads_short_names[w], "/",
+                             parameter, "_", test_vector_options[j], "_", "name_", 
+                             test_vector_options_names[j], ".json")
+    
+    # Testing a different scenario name
+    #scenario_name <- paste(base_payloads_short_names[w], parameter, 
+    #                       test_vector_options[j], "Name", test_vector_options_names[j])
+    scenario_name <- paste0("field_base/",base_payloads_short_names[w], "/",
+                             parameter, "_", test_vector_options[j], "_", "name_", 
+                             test_vector_options_names[j])
+    #tmp <- append(x = tmp, values = list(qdmp_request_id = scenario_name), after = 8) # change id here
+    
+    tmp$qdmp_request_id <- scenario_name
+    
+    apo_write_json(x = tmp, file = export_name, pretty = T, na = T, auto_unbox = T)
+    
+    print(export_name)
+    #print(scenario_name)
+    rm(tmp)
+  }
+  
+}
+
+}
+
+```
+
+## Creating payloads for T/F, array, other hard-to-deal parameters
+
+These include common payloads (i.e. applicable to both rainfed and irrigated) that can't be created systematically as with the previous chunk (so far). Crop-specific payloads, fert, protectants, manure, to come later. This section includes:
+
+* Nutrient4RS (done)
+* WildlifeHabitat
+* ConservationPractices
+* WindBarrier (T/F)
+* Nutrient Plan (T/F)
+* Residue Burned (3 parameters, including T/F)
+* Harvest moisture, moisture removed (some crop-specifics here, cotton, peanuts, others?)
+* Transportation mileage
+
+```{r Nutrient4RS, eval = T, message = F, warning = F, include = T}
+
+list_base_payloads <- head(ls(pattern = "base_payload"), n = 3) # need something better here, probably
+
+# Open list
+nutrient_4Rs_options <- list()
+
+# Populate list with the 4Rs options
+nutrient_4Rs_options[[1]] <- list() 
+nutrient_4Rs_options[[2]] <- c("1")
+nutrient_4Rs_options[[3]] <- c("1", "2")
+nutrient_4Rs_options[[4]] <- c("1", "2", "3")
+nutrient_4Rs_options[[5]] <- c("1", "2", "3", "4")
+
+for (w in 1:length(list_base_payloads)) {
+  base_payload <- get(list_base_payloads[w])
+  
+  parameter <- "nutrient_4r_ids"
+  
+  base_vector_option <- base_payload$json$Rotation[[parameter]][[1]]
+  
+  # No Rs
+  if (identical(base_vector_option, list(nutrient_4Rs_options[[1]])) == FALSE) {
+    payload_to_modify <- base_payload
+    payload_to_modify$json$Rotation[["nutrient_4r_ids"]][[1]] <- nutrient_4Rs_options[[1]]
+    export_name <- paste0("04_payloads/field_base/",base_payloads_short_names[w], "/",
+                          parameter, "_", "no_Rs", ".json")
+    #scenario_name <- paste0(base_payloads_short_names[w], "/",parameter, "_", "no_Rs")
+    scenario_name <- paste0("field_base/", base_payloads_short_names[w], "/",parameter, "_", "no_Rs")
+    payload_to_modify$qdmp_request_id <- scenario_name  
+    payload_to_modify$json$Rotation$nutrient_plan <- FALSE
+    apo_write_json(x = payload_to_modify, file = export_name, pretty = T, na = T, auto_unbox = T)
+    print(export_name)
+  }
+  
+  # One R
+  if (identical(base_vector_option, nutrient_4Rs_options[[2]]) == FALSE) {
+    payload_to_modify <- base_payload
+    payload_to_modify$json$Rotation[["nutrient_4r_ids"]][[1]] <- list(nutrient_4Rs_options[[2]])
+    export_name <- paste0("04_payloads/field_base/",base_payloads_short_names[w], "/",
+                          parameter, "_", "one_Rs", ".json")
+    #scenario_name <- paste0(base_payloads_short_names[w], "/",parameter, "_", "one_Rs")
+    scenario_name <- paste0("field_base/", base_payloads_short_names[w], "/",parameter, "_", "one_Rs")
+    payload_to_modify$qdmp_request_id <- scenario_name
+    payload_to_modify$json$Rotation$nutrient_plan <- FALSE
+    apo_write_json(x = payload_to_modify, file = export_name, pretty = T, na = T, auto_unbox = T)
+    print(export_name)
+  }
+  
+  # Two Rs
+  if (identical(base_vector_option, nutrient_4Rs_options[[3]]) == FALSE) {
+    payload_to_modify <- base_payload
+    payload_to_modify$json$Rotation[["nutrient_4r_ids"]][[1]] <- nutrient_4Rs_options[[3]]
+    export_name <- paste0("04_payloads/field_base/",base_payloads_short_names[w], "/",
+                          parameter, "_", "two_Rs", ".json")
+    #scenario_name <- paste0(base_payloads_short_names[w], "/",parameter, "_", "two_Rs")
+    scenario_name <- paste0("field_base/", base_payloads_short_names[w], "/",parameter, "_", "two_Rs")
+    payload_to_modify$qdmp_request_id <- scenario_name
+    payload_to_modify$json$Rotation$nutrient_plan <- FALSE
+    apo_write_json(x = payload_to_modify, file = export_name, pretty = T, na = T, auto_unbox = T)
+    print(export_name)
+  }
+  
+  # Three Rs
+  if (identical(base_vector_option, nutrient_4Rs_options[[4]]) == FALSE) {
+    payload_to_modify <- base_payload
+    payload_to_modify$json$Rotation[["nutrient_4r_ids"]][[1]] <- nutrient_4Rs_options[[4]]
+    export_name <- paste0("04_payloads/field_base/",base_payloads_short_names[w], "/",
+                          parameter, "_", "three_Rs", ".json")
+    #scenario_name <- paste0(base_payloads_short_names[w], "/",parameter, "_", "three_Rs")
+    scenario_name <- paste0("field_base/", base_payloads_short_names[w], "/",parameter, "_", "three_Rs")
+    payload_to_modify$qdmp_request_id <- scenario_name
+    payload_to_modify$json$Rotation$nutrient_plan <- FALSE
+    apo_write_json(x = payload_to_modify, file = export_name, pretty = T, na = T, auto_unbox = T)
+    print(export_name)
+  } 
+  
+  # Four Rs
+  if (identical(base_vector_option, nutrient_4Rs_options[[5]]) == FALSE) {
+    payload_to_modify <- base_payload
+    payload_to_modify$json$Rotation[["nutrient_4r_ids"]][[1]] <- nutrient_4Rs_options[[5]]
+    export_name <- paste0("04_payloads/field_base/",base_payloads_short_names[w], "/",
+                          parameter, "_", "four_Rs", ".json")
+    #scenario_name <- paste0(base_payloads_short_names[w], "/",parameter, "_", "four_Rs")
+    scenario_name <- paste0("field_base/", base_payloads_short_names[w], "/",parameter, "_", "four_Rs")
+    payload_to_modify$qdmp_request_id <- scenario_name
+    payload_to_modify$json$Rotation$nutrient_plan <- FALSE
+    apo_write_json(x = payload_to_modify, file = export_name, pretty = T, na = T, auto_unbox = T) 
+    print(export_name)
+  }
+  
+}
+
+rm(payload_to_modify, base_payload, export_name, scenario_name, i, w, nutrient_4Rs_options, parameter, base_vector_option)
+
+```
+
+## (to do) Systematic irrigation payloads (there are several)
+
+## Applying base payloads to any number of boundaries given
+
+```{r boundary_batch_process, eval = T, message = F, warning = F, include = T}
+
+# Number of base scenario branches
+base_payloads_short_names # use this
+
+# For N number of scenarios, this needs to iterate
+# payload_vector <- list.files(path = "C:/Users/EricCoronel/Documents/2020_work_items/08_19_Fieldprint_API_connection/function/payloads_export", pattern = ".json")
+# payload_vector_reduced <- gsub(pattern = ".json", replacement = "", payload_vector) # for qdmp_request_id
+
+# Sample of field names to reuse for testing
+#lastnames <- readr::read_csv("02_boundaries/last_names_sample.csv")
+#lastnames <- lastnames[sample(nrow(lastnames), 1), ]
+
+lastnames <- readr::read_csv("02_boundaries/sample-names.csv") %>% unique()
+#lastnames <- lastnames[sample(nrow(lastnames), 236), ]
+lastnames <- head(lastnames, n = 236) # modify n to match number of boundaries
+
+# Shapefile of boundaries to test
+shape <- sf::st_read("02_boundaries/uga-boundaries.shp") %>% # delete field from base payload/s
+  unique() %>% 
+  rename(delete = name) %>% 
+  #head(., n = 1) %>% 
+  bind_cols(lastnames) %>% 
+  select(name, geometry)# %>% 
+  #rename(name = MUNAME) %>% 
+  #mutate(name = gsub(" ", "_", name)) %>% # no field can be named "base" except for base payload
+  #head(n = 10)
+  #bind_cols(name = field)
+
+shape <- sf::st_zm(shape)
+
+shape <- head(shape)
+
+# Number of boundaries to create folders? boundary_vector <- paste("field", 1:6)
+boundary_vector <- paste("field", shape$name, sep = "_") # field names might need, add cleaning 1:N
+
+# Create output folders to receive everything
+
+# delete previous batch
+# for (u in 1:length(boundary_vector)) {
+# unlink(paste0("04_payloads/",boundary_vector[u]), recursive = TRUE)
+# }
+
+#Sys.sleep(5)
+
+# create new batch to receive payloads
+for (i in 1:length(boundary_vector)) {
+    for (d in 1:length(base_payloads_short_names)) {
+      dir.create(paste0("04_payloads/", boundary_vector[i], "/", base_payloads_short_names[d]), 
+                 recursive = TRUE)
+  }
+}
+
+Sys.sleep(3)
+
+#unlink("05_pool_payloads", recursive = TRUE)
+
+#Sys.sleep(4)
+
+dir.create("05_pool_payloads", recursive = TRUE)
+
+# This process skips the field that came with the base payloads
+
+for (z in 1:length(base_payloads_short_names)) {
+  
+  # For N number of scenarios, this needs to iterate
+  payload_vector <- list.files(path = paste0(getwd(), "/04_payloads/field_base/", base_payloads_short_names[z]), pattern = ".json")
+  payload_vector_reduced <- gsub(pattern = ".json", replacement = "", payload_vector) # for qdmp_request_id
+  #print(payload_vector)
+  #print(payload_vector_reduced)
+  
+  for (k in 1:length(payload_vector)) {
+    payload_base <- jsonlite::fromJSON(paste0("04_payloads/field_base/", base_payloads_short_names[z], "/", payload_vector[k]))
+    
+    for (i in 1:length(boundary_vector)) {
+      # Insert the coordinates only
+      payload <- payload_base # starting with the base payload just in case
+      payload$json$geojson$coordinates <- list(shape$geometry[[i]][[1]]) # how many times it gets listed?
+      payload$qdmp_request_id <- paste0(boundary_vector[i], "/",base_payloads_short_names[z], "/", payload_vector_reduced[k])
+      # remove soil parameters, let the engine get these, anything else?
+      payload$json$plantable_acres <- NULL
+      payload$json$slope <- NULL
+      payload$json$slope_length <- NULL
+      payload$json$texture_id <- NULL
+      payload$json$om_content <- NULL
+      print(paste(boundary_vector[i], payload_vector[k]))
+      
+      # This function writes to separate folders for QC
+      apo_write_json(x = payload, pretty = T, 
+                     file = paste0("04_payloads/", boundary_vector[i], "/", base_payloads_short_names[z],"/",
+                                   payload_vector[k]), na = TRUE, auto_unbox = T)
+      
+      # This function writes to a pooled folder for easier batch processing
+      apo_write_json(x = payload, pretty = T, 
+                     file = paste0("05_pool_payloads/", boundary_vector[i], "_",
+                                                            base_payloads_short_names[z],"_",
+                                                            payload_vector[k]), na = TRUE, auto_unbox = T)
+    }
+  }
+}
+
+#save.image("batch-05-progress-03.RData")
+#load("batch-04-progress.RData")
+
+```
+
+## Asynchronous API requests
+
+To send all payloads for testing (watch out for the number to send)
+Preliminary tests show that it takes approx. 18 seconds per payload to run (~ 387 payloads/hour)
+
+```{r API_requests, eval = T, message = F, warning = F, include = T}
+
+library(crul)
+#library(jsonlite)
+#library(tidyverse)
+
+payloads_to_send <- list.files(path = "05_pool_payloads", pattern = ".json")
+#payloads_to_send <- payloads_to_send[c(1:999)]
+#payloads_to_send <- payloads_to_send[c(1000:2300)]
+#payloads_to_send <- payloads_to_send[c(2301:2832)]
+
+url <- "https://api.fieldtomarket.org/v4/Calculator"
+
+# hdr <- list(
+#   `Authorization` = "Bearer K6MOR49RtjFsXcjbJdpWE37KeyCgRi",
+#   `Content-Type` = "application/json"
+# )
+
+hdr <- list(
+  `Authorization` = "Bearer paste-API-here", # get API from Paul
+  `Content-Type` = "application/json"
+)
+
+# Creating a list of individual requests with varying bodies
+req <- vector("list", length(payloads_to_send))
+
+for(i in seq_along(payloads_to_send)){
+  req[[i]] <- HttpRequest$new(url = url, headers = hdr)$post(body = httr::upload_file(paste0("05_pool_payloads/", payloads_to_send[[i]])))
+}
+
+# Packaging
+res <- AsyncVaried$new(.list = req)
+
+# Executing
+Sys.time()
+system.time(res$request()) #Approx. 18 seconds/payload
+beepr::beep(sound = 2)
+Sys.time()
+#View(res$status())
+#res$parse()
+#View(res$parse())
+
+save.image("re-do-02.RData")
+
+unnesting <- list()
+
+Sys.time()
+system.time(
+for (n in 1:length(payloads_to_send)) {
+  unnesting[[n]] <- jsonlite::fromJSON(res$parse()[[n]], flatten = TRUE) # this opens the gates
+}
+)
+Sys.time()
+
+receiving_dataset_batch_01_redo <- unnesting %>% purrr::map(unlist) %>%
+  bind_rows() %>%
+  #rename(error_qdmp_request_id = qdmp_request_id) %>%
+rename(UGA.qdmp_request_id = metadata.qdmp_request_id) %>%
+  #select(-qdmp_request_id) %>% # if there are errors a second qdmp_request_id variable is created
+  rename_all(~stringr::str_replace_all(., "metadata.|cropyears.", "")) %>%
+  tidyr::separate(col = UGA.qdmp_request_id,
+                  into = c("field", "mgt","name"),sep = "/") %>% # this might change
+  mutate(field = gsub(pattern = "field_", replacement = "", field)) # removes field_ prefix
+
+# three batches to tie together
+batch_05_final <- receiving_dataset_batch_05_01 %>%  # two payloads didn't run, run them at the end...
+  bind_rows(receiving_dataset_batch_05_02) %>% # three payloads didn't run, run them later
+  bind_rows(receiving_dataset_batch_05_03) %>% # three payloads didn't run
+  #bind_rows(receiving_dataset_batch_02_missing_02) %>% 
+  filter(!is.na(soilConservation.fieldprintResult.value)) %>% 
+  type.convert()
+
+#save.image("batch-01-redo-final.RData")
+#load("batch-01-redo-final.RData")
+
+save(receiving_dataset_batch_01_redo, file = "01-final.RData")
+
+```
+
+## SSURGO parameter extraction via the FPP API
+
+Not necessary anymore, the payloads have soils data since FPP V4, I think
+Still useful if you want soil data from boundaries
+
+```{r SSURGO, eval = T, message = F, warning = F, include = T}
+
+# process:
+# create 06_SSURGO_data folder
+# from shapefile, extract coordinates, export them as json, run them via the API and collect the info
+
+unlink("06_SSURGO_payloads", recursive = TRUE)
+
+dir.create("06_SSURGO_payloads", recursive = TRUE)
+
+for (b in 1:length(boundary_vector)) {
+  coords <- list(geojson = list(type = "Polygon", coordinates = list(shape$geometry[[b]][[1]])))
+  apo_write_json(x = coords, pretty = T, file = paste0("06_SSURGO_payloads/", "coords_",boundary_vector[b], ".json"), na = TRUE, auto_unbox = T)
+}
+
+coords_to_send <- list.files(path = "06_SSURGO_payloads", pattern = ".json")
+
+ssurgo_list <- vector("list", length(coords_to_send))
+
+url_ssurgo <- "https://api.fieldtomarket.org/v4/FieldData/SSURGO"
+
+hdr <- list(
+  `Authorization` = "Bearer api-key",
+  `Content-Type` = "application/json"
+)
+
+for(i in seq_along(coords_to_send)){
+   ssurgo_list[[i]] <- HttpRequest$new(url = url_ssurgo, headers = hdr)$post(body = httr::upload_file(paste0("06_SSURGO_payloads/", coords_to_send[[i]])))
+}
+
+# Packaging request
+coords_res <- AsyncVaried$new(.list = ssurgo_list)
+# Executing request
+system.time(coords_res$request()) #
+
+unnesting_ssurgo <- list()
+
+for (n in 1:length(coords_to_send)) {
+  unnesting_ssurgo[[n]] <- jsonlite::fromJSON(coords_res$parse()[[n]], flatten = TRUE) # this opens the gates
+}
+
+coords_dataset <- unnesting_ssurgo %>% purrr::map(unlist) %>%
+  bind_rows() %>%
+  #bind_cols(field = sort(shape$name)) # coords_to_send need to find here the right name to append to the general dataset
+  bind_cols(field = coords_to_send)
+  #select(-qdmp_request_id) %>% # if there are errors a second qdmp_request_id variable is created
+  #rename_all(~str_replace_all(., "metadata.|cropyears.", "")) %>% 
+  #separate(col = qdmp_request_id, into = c("field", "mgt","name"),sep = "/") # this might change by project
+  #mutate(field = gsub("coords_field_|.json", "", field))
+
+# Testing joining with the bigger dataset, this would be close to the final dataset before analysis
+final_dataset <- receiving_dataset %>% 
+  left_join(coords_dataset, by = "field")
+
+```

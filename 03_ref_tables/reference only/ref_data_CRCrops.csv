@@ -1,0 +1,291 @@
+"","id","name","defaultYield","yieldUnit","cropNotes","fpp_type","fpp_crop_id"
+"1","740","Alfalfa-Grass, cool season, hay",1.5,"ton/ac","Mixed Perennial, hay or forage production, example alfalfa with cool season grass,
+Suggest harvest:  Harvest, hay, grass or legume, ","primary",NA
+"2","741","Alfalfa-Grass, warm season, hay",4,"ton/ac","Mixed Perennial, hay or forage production, example alfalfa with warm season grass,
+Suggest harvest:  Harvest, hay, grass or legume, ","primary",NA
+"3","742","Alfalfa-Grass, warm season, release",6.5,"ton/ac","Archive:
+This crop record was cloned from the Alfalfa, released growing crop record.  ARS and NRCS have worked to have this crop show some growth
+at the time Oats or Other ratoon crops are gown.  MAS 121-26-07
+Size ranges
+J.J. rquez-Ortiz, J.F.S. Lamb, L.D. Johnson, D.K. Barnes and R.E. Stucker, 1999, Heritability of crown traits in alfalfa, Crop Science, Vol 39, Issue 1 pgs. 38-43
+Crown Depth (distance from the soil level to the top of the tap root) - 0.5cm to 5cm
+Crown width (just below the soil surface) - 2cm to 12cm or greater
+Number of crown stems - 2 to 10 or more
+Crown stem width - 2mm to 6mm or greater
+Number of crown buds - none to 12 or more
+
+D.K. Barnes, R.B. Pearce, G.E. Carlson, R.H. Hart, and C.H. Hanson. 1969. SPecific Leaf Weight Differences in Alfalfa Associated with Variety and
+Plant Age. Crop Science, Vol 9, pgs. 421-423.
+Values of Specific leaf weight measured in the paper varied from 2.15 to 4.3, with early season growth mostly in the area of 2.15 to 2.72 mg/cm^2
+Conversion to m^2/kg is * 10^6 mg/kg * 10^-4 m^2/cm^2 = 100 / mg/cm^2
+
+2.15 mg/cm^2 = 100 / 2.15 m^2/kg = 46.5 m^2/kg, 100 / 2.72 = 36.8, 100 / 4.3 = 23.3
+
+M. H. Hall, C. J. Nelson, J. H. Coutts and R. C. Stout. 2004. Effect of Seeding Rate on Alfalfa Stand Longevity. Agron. J. 96:717-722
+Stem densities for the MO94 study (data not presented) were not different among seeding rates at any sampling time. There were 623 stems m–2 13 MAP
+and only 350 stems m–2 by 25 MAP. Stem density remained nearly constant at that level through 49 MAP. During the same time period, plant density
+declined from an average of 100 down to 25 plants m–2. This means that there was a fourfold increase in stems per plant from 25 to 49 MAP during
+the same time period. Thereafter, stem density continued to decline to 290 and 260 stems m–2 at 63 and 73 MAP, respectively, while plant density fell
+below 15 plants m–2 during the same time period. Crowns develop stems in response to light (Cowett and Sprague, 1962) and apparently could not
+continue to maintain high stem density with the thin stand and older plants.
+
+data as shown above.
+MAP = months after planting
+SPM2 = stems per square meter
+PPM2 = plants per square meter
+SPP = stems per plant
+
+MAP	SPM2	PPM2	 SPP
+13	623	100	62.3
+25	350	36	9.7
+49	350	25	14
+63	290	16	18
+73	260	13	20
+
+With the critical period of alfalfa being establishment, a stem count, equals plant count of 400 stems per square meter is used to try and get early cover.
+
+Fick, G.W., D.A. Holt, D.G. Lugg. 1988. Environmental Physiology and Crop Growth. in A.A. Hanson, D.K. Barnes, R.R. Hill , Jr., eds. 1988 Alfalfa and Alfalfa
+Improvement. Agronomy Monograph Number 29. American Society of Agronomy.
+page 181. Growth temperatures: GDD base from 0 to 5 C, varies depending on time of year. GDD totals 0 C base, 700 to bud, 880 to first flower,
+1075 to full bloom, 1900 to ripe seed stages. Suggests a GDD max temperature around 30 C
+
+Changed the cover to mass value to match Fosters finest stem curve, Small Grain and Alfalfa.  Reference pg. 179 Ag Handbook 703.
+No crop has a larger number (finer stems) than .000586.  This matches RUSLE2.  MAS 12-21-10
+
+The biomass adjustment factor has been set to 1.0 from the 0.6 that Fred had.  The biomass conversion eff factor was moved from 30 to 24 to match yield
+of the standard alfalfa run in Moses Lake, WA and now in Yuma, AZ.  The record runs a little under the 6 ton/ac yield in ML, and somewhat over the 10 t/ac for
+Yuma.  The seed weight was increased from 0.00007 to 0.0006 to increase the intial growth of the fall planting.There is about 1500 lbs of growth going into
+winter in WA and about 2400 lbs/ac at the first harvest in AZ.    Yuma will need to lower the Biomass Adjustment factor to 0.8 to get the 12 t/ac yield needed.
+MAS 7-6-11
+","primary",NA
+"4","738","Alfalfa, hay",6.5,"ton/ac","Perennial, hay or forage production,
+Suggest harvest:  Harvest, hay, grass or legume, ","primary","8"
+"5","737","Alfalfa, hay, release",6.5,"ton/ac","Perennial, hay or forage production, crop released with harvest oprn for current crop,
+suggest harvest for the released perennial:  Harvest, hay, grass or legume,","primary","8"
+"6","739","Alfalfa, seed production",1200,"lbs/ac","Perennial, seed production,
+Suggest harvest:  Harvest, hay, grass or legume, seed,","primary",NA
+"7","743","Artichoke",15000,"lbs/ac","Perennial, seed production,
+Suggest harvest:  Harvest, hay, grass or legume, seed,","primary",NA
+"8","744","Asparagus",2000,"lbs/ac","Perennial, vegetable above ground, suggest harvest:  Harvest hand pick, final, ","primary",NA
+"9","745","Barley, spring, grain",55,"bu/ac","Annual, cool season grass, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary","48"
+"10","746","Barley, winter, grain",50,"bu/ac","Archive:
+Adjusted the Heat Units from the 3150 down to 2400 (same as WW)
+Tested in Delaware with John Timmons run.  8-18-09  MAS","primary","48"
+"11","747","Bean, field, dry",1400,"lb/ac","Archive:
+RUSLE: Field Beans fair yield-1400 lbs Rev.2/6/95 DTL rev 061801 DTL","primary",NA
+"12","748","Bean, Pea, field, green",8100,"lb/ac","Annual, green or fresh market bean or pea production, examples:  green snap, Trellis, green pea production, suggest harvest oprn:  Harvest, hand pick, last or mechanical, ","primary",NA
+"13","750","Brassica, cover, forage",1200,"lb/ac","Perennial, seed production,
+Suggest harvest:  Harvest, hay, grass or legume, seed,","cover",NA
+"14","749","Brassica, cover, forage, release",3000,"lbs/ac","Archive:
+This record is a clone from Cereal Rye interseeded cover crop.  1-13-09    This is the cover crop released by the harvest of the silage or soybeans,
+etc. when the cover was previously seeded in growing corn silage or soybeans, etc.   REV 10/15/03 DTL
+
+Cloned 11-4-07.  Added 1000 lbs/ac biomass at seedng in the oz/plant column.  MAS
+
+I tried to use the brassica file and did not get it to grow in the colder sites.  MAS 1-13-09","cover",NA
+"15","751","Buckwheat, grain",25,"bu/ac","Archive:
+3/16/95 JBC CORE buckwheat 30 bushel yield, data from Farmer's Bul. 1835, Growing Buckwheat,
+CPIDS, &amp; Martin and Leonard '49, pp.862-870. REV 61801 DTL
+Cloned mustard from ARS and changed planting rate, yield, and harvest index.  5/3/07 MAS
+
+Changed the cover to mass value to match Fosters finest stem curve, Small Grain and Alfalfa.  Reference pg. 179 Ag Handbook 703.
+No crop has a larger number (finer stems) than .000586.  This matches RUSLE2.  MAS 12-21-10
+
+Changed the percenage of the flowering mass harvested from 0.4 to 0.8 as Fred Fox suggested to correct
+an error message.  Moved the days of growth from 90 to 70 based on a paper Buckwheat,
+Alternative Fiedl Crops Manual, University of Wisconsin Ext.  E.S. Oplinger Dept of Ag. Nov 1989.
+He said the crop will grow in 10 to 12 weeks (70 to 84 days).  Moved the internal biomass adjustment
+factor from 25 to 40 to reduce the External factor down from the 3.9 on a run in Clay Co. MN using a
+CMZ 1 Buckwheat template.  After adjustment it is between 2 and 3 now.  12-28-10  MAS","primary",NA
+"16","752","Camelina, grain",690,"lbs/ac","Archive:
+Plant population comes from James M. Krall and David D. Basltensperger.
+Rusle notes:Grown in Northern Plains, High quality oil seed crop.  Yield is dryland.
+Camelina, spring planted for oil, seed or biodiesel.  Based on data from NW Agr. Research Ctr., Creston, MT, 2005.  tmg; 032307.
+Modified from vegetation record, Flax (lbs), Utah conditions  based on 840 pound yield. 032607 DTL
+
+WEPS MAS 7/31/07
+Residue yield  ratio from RUSLE.
+Tested in Cascade Co. MT. with Wheat, spring-Camelina-Fallow, conv, CMZ 6.
+Crop factors adjusted for very cold growth for early planting date (march 15).","primary",NA
+"17","753","Canola, spring, grain",1200,"lb/ac","Annual, broadleaf, grain production, suggest harvest oprn: Harvest, killing crop with percent standing stubble,  ","primary",NA
+"18","754","Canola, winter, grain",1100,"lb/ac","Annual, cool season grass, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary",NA
+"19","755","Carrot, fresh market",28400,"lbs/ac","Annual, broadleaf, below ground vegetable, suggest harvest:  Harvest, dig root crop, ","primary",NA
+"20","756","Carrot, processing",30,"ton/ac","Annual, broadleaf, below ground vegetable, suggest harvest:  Harvest, dig root crop, ","primary",NA
+"21","757","Cassava, tubers",26000,"lbs/ac","Annual, broadleaf, below ground vegetable, suggest harvest:  Harvest, dig root crop, ","primary",NA
+"22","758","Clover, perennial, forage, release",3,"ton/ac","Perennial, hay or forage, crop released with harvest, release crop operation,
+suggest harvest for the released perennial:  Harvest, hay, grass or legume, ","cover",NA
+"23","759","Clover, red, alsike, forage",3,"ton/ac","Perennial, hay or forage, suggest harvest oprn:  Harvest, hay, grass or legume, ","cover",NA
+"24","760","Clover, red, alsike, seed production",1500,"lb/ac","Perennial, broadleaf, legume, for seed production,
+suggest harvest:  Harvest, perennial, grass or legume seed,","cover",NA
+"25","761","Clover, sweet, forage",3,"ton/ac","Perennial, hay or forage, suggest harvest oprn:  Harvest, hay, grass or legume, ","cover",NA
+"26","762","Clover, sweet, seed production",1500,"lb/ac","Annual, broadleaf, root crop harvested for seed,
+suggest harvest:  Harvest, perennial, grass or legume seed,","cover",NA
+"27","763","Corn, grain, seed",112,"bu/ac","Annual, grass, warm season, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary","1"
+"28","764","Corn, pop, grain",11000,"lbs/ac","Annual, grass, warm season, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary",NA
+"29","765","Corn, silage",23,"ton/ac","Annual, grass, warm season, high moisture silage production,
+suggest harvest:  Harvest,silage, ","primary","46"
+"30","766","Corn, sweet, ears",14000,"lbs/ac","Annual, warm season, whole ear production,
+Harvest suggest:  Harvest vegetable, last, manual or mechanical, ","primary",NA
+"31","767","Cotton",750,"lb/ac lint","Annual, broadleaf, warm season, lint production,
+suggest harvest oprn: Harvest, Cotton, ","primary","4"
+"32","768","Cover crop, annual, legume",3,"ton/ac","Annual, broadleaf, cover crop production,
+suggest termination, spray kill crop or tillage, ","cover",NA
+"33","769","Cover crop, mix, cool season, spring",2000,"lb/ac","Annual, cool season grass and broadleaf mix, cover crop,
+Suggest termination, Spray kill crop or tillage.  ","cover",NA
+"34","770","Cover crop, mix, cool season, winter",3890,"lbs/ac","Annual, cool season grass and broadleaf mix, cover crop,
+Suggest termination, Spray kill crop or tillage.  ","cover",NA
+"35","771","Cover crop, mix, warm season",2000,"lb/ac","Annual, warm season grass and broadleaf mix, cover crop,
+Suggest termination, Spray kill crop or tillage.  ","cover",NA
+"36","772","Crambe",2000,"lb/ac","Annual, broadleaf, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary",NA
+"37","773","Eggplant",250,"lbs/ac","Annual, broadleaf, above ground vegetable production,
+suggest harvest, harvest hand pick last or mechanical, ","primary",NA
+"38","774","Flax, grain",15,"bu/ac","Annual, broadleaf, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary",NA
+"39","775","Flower perennial, bulbs",600,"lbs/ac","Perennial, flower bulb, below ground production,
+suggest harvest:  Harvest dig shallow root crop,","cover",NA
+"40","776","Flowers, annual",1200,"lbs/ac","Annual flower production, above ground flowers with stem and wholde plant
+suggest harvest:  Harvest cut flowers,","cover",NA
+"41","777","Flowers, perennial",6.5,"ton/ac","Perennial, flower production, harvest suggest:  Harvest leafy crops manual or mechanical,
+or lavender bundles, or harvest cut flowers, ","cover",NA
+"42","778","Garlic, seed production",17000,"lb/ac","Perennial, root crop, seed production,
+suggest harvest:  Harvest dig shallow root crop, ","primary",NA
+"43","779","Ginger",46000,"lbs/ac","Perennial, root crop, below ground production,
+suggest harvest:  Harvest dig shallow root crop, ","primary",NA
+"44","780","Grass, annual, forage, fiber",3,"lbs/ac","Annual fiber crops, grass or broadleaf, examples kenaf, hemp,
+suggest harvest:  Harvest, biomass, fiber crops,  ","cover",NA
+"45","781","Grass, perennial, cool season",3000,"lbs/ac","Perennial, cool season grass, hay or forage,
+suggest harvest:  Harvest, hay, grass or legume, ","cover",NA
+"46","782","Grass, perennial, Switchgrass",3000,"lbs/ac","Perennial, warm season grass, hay production,
+suggest harvest oprn: Harvest, hay, grass or legume, ","cover",NA
+"47","783","Grass, perennial, Turfgrass",1,"ton/ac","Perennial, grass, turf production, Harvest select:  sod cutter, ","cover",NA
+"48","784","Grass, perennial, warm season",3000,"lbs/ac","Perennial, warm season grass, hay or forage,
+suggest harvest:  Harvest, hay, grass or legume, , ","cover",NA
+"49","785","Grass, seed, perennial, cool season",1200,"lbs/ac","Perennial, cool season grass for seed production,
+suggest harvest:  Harvest, perennial, grass or legume seed, ","cover",NA
+"50","786","Grass, seed, perennial, warm season",1200,"lbs/ac","Perennial, warm season grass for seed production,
+suggest harvest:  Harvest, perennial, grass or legume seed, ","cover",NA
+"51","787","Hops",34,"tons/ac","Perennial, large  trained plant, hops procution,
+Harvest manual or mechanical last,","primary",NA
+"52","788","Horseradish",18000,"lbs/ac","Perennial, root crop, below ground production,
+suggest harvest:  Harvest dig shallow root crop,","primary",NA
+"53","789","Meadowfoam, seed production",1100,"lb/ac","Annual, seed production,
+suggest harvest, harvest grass or legume seed.,","primary",NA
+"54","790","Melons, vine, eg watermelon",25000,"lbs/ac","Annual, broadleaf vine crop, above ground veg or fruit,
+suggest harvest:  Harvest, vine crop, final","primary",NA
+"55","791","Millet, foxtail, grain",30,"bu/ac","Annual, warm season grass, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary",NA
+"56","792","Millet, proso, grain",35,"bu/ac","Enter dev notes here.","primary",NA
+"57","793","Mint",1100,"lbs/ac","Perennial, hay forage production and extract oil,
+Suggest harvest:  Harvest, hay, grass or legume, ","primary",NA
+"58","794","Miscanthus, perennial, biomass",12,"ton/ac","Perennial, biomass cover production,
+suggest harvest, Harvest biomass fiber crop, ","primary",NA
+"59","795","Miscanthus, perennial, rhizome",12,"lbs/ac rhizome","Perennial, biomass cover, root production,
+suggest harvest, Harvest shallow root crop, ","primary",NA
+"60","796","Mustard seed, grain",1200,"lb/ac","Annual, cool season broadleaf, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary",NA
+"61","797","no crop",0,"kg/m^2","Placeholder crop, record used in management editor","primary",NA
+"62","798","Oats, spring, grain",60,"bu/ac","Annual, cool season grass, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","cover",NA
+"63","799","Okra",2650,"lbs/ac","Annual, broadleaf, above ground vegetable production,
+suggest harvest, harvest hand pick last or mechanical, ","primary",NA
+"64","800","Onion, bulb dry",300,"cwt/ac","Annual, root crop production,
+suggest harvest, harvest dig root crop, ","primary",NA
+"65","801","Onion, bulb, released",300,"cwt/ac","Annual, root crop production, released growth with harvest or spray termination of previous crop
+suggest harvest, harvest dig root crop, ","primary",NA
+"66","802","Onion, green bunch",18200,"lbs/ac","Annual, root crop production, suggest harvest, harvest dig root crop, ","primary",NA
+"67","803","Pea, Lentil, dry",1500,"lb/ac","Annual, dry pea production, examples:  black eye, chick, lentils,
+suggest harvest oprn:  Harvest, knife, windrow, combine, ","primary",NA
+"68","804","Peanut, runner",2000,"lb/ac","Annual, root crop production, suggest harvest, harvest dig root crop, ","primary","6"
+"69","805","Peppers, bell, chile",31800,"lbs/ac","Annual, broadleaf, above ground vegetable production,
+suggest harvest, harvest hand pick last or mechanical, ","primary",NA
+"70","806","Pineapple",10,"ton/ac","Perennial, tropical crop, above ground harvest,
+suggest harvest, Harvest hand pick manual or mechanical,","primary",NA
+"71","807","Potato, tubers",400,"cwt/ac","Annual, root crop production, suggest harvest, harvest dig root crop, ","primary","41"
+"72","808","Rice, dwarf",90,"cwt/ac","Annual, warm season grass, grain production,
+suggest final harvest: Harvest, killing crop with percent standing stubble, ","primary","39"
+"73","809","Rice, semi-dwarf",75,"cwt/ac","Annual, warm season grass, grain production,
+suggest final harvest: Harvest, killing crop with percent standing stubble, ","primary","39"
+"74","810","Rice, tall",55,"cwt/ac","Annual, warm season grass, grain production,
+suggest final harvest: Harvest, killing crop with percent standing stubble, ","primary","39"
+"75","811","Roses, bag market",40000,"lbs/ac","Perennial, bush, flower, Harvest suggest, harvest dig deep root crops, ","primary",NA
+"76","812","Rye, cereal, winter, grain",40,"bu/ac","Annual, cool season grass, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","cover",NA
+"77","813","Ryegrass, annual, grain",1780,"ton/ac","Annual, cool season grass, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","cover",NA
+"78","814","Safflower",1400,"lb/ac","Annual, warm season broadleaf, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary",NA
+"79","815","Sesame, seed",2600,"lb/ac","Annual, warm season broadleaf, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary",NA
+"80","816","Small grain, spring, forage",2000,"lbs/ac","Annual, cool season grass, hay or forage production, examples Oats, Barley, Wheat,
+suggest harvest oprn: Harvest, hay, grass or legume, or grazing, ","cover",NA
+"81","817","Small grain, spring, hay",2,"ton/ac","Annual, cool season grass, hay production,
+suggest harvest oprn: Harvest, hay, grass or legume,","cover",NA
+"82","818","Small grain, spring, silage",8,"ton/ac","Annual, cool season grass, silage production,
+suggest harvest oprn: Harvest, silage,","cover",NA
+"83","820","Small grain, winter, forage",2240,"lbs/ac","Annual, winter small grain, grown for hay, forage, cover,
+examples winter Barley and Triticale, Harvest hay, or graze, or terminate cover crop, ","cover",NA
+"84","819","Small grain, winter, forage, release",2000,"lbs/ac","Annual, released growing winter small grain crop grown for hay, forage, cover,
+examples winter Barley and Triticale, Harvest hay, or graze, or terminate cover crop, ","cover",NA
+"85","821","Small grain, winter, hay",2,"ton/ac","Annual, cool season grass, hay production,
+suggest harvest oprn: Harvest, hay, grass or legume,","cover",NA
+"86","822","Small grain, winter, silage",11,"ton/ac","Annual, small grain, cool season crops, silage production,
+Harvest suggest, Harvest, silage,","cover",NA
+"87","823","Sorghum, forage, seed production",1250,"lb/ac","Annual, grass, warm season, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary",NA
+"88","824","Sorghum, grain",64,"bu/ac","Enter dev notes here.","primary","5"
+"89","825","Sorghum, sudangrass, forage",10,"ton/ac","Annual, warm season grass, hay production,
+suggest harvest oprn: Harvest, hay, grass or legume, ","primary",NA
+"90","826","Sorghum, sudangrass, silage",20,"ton/ac","Annual, warm season grass, silage production, Harvest suggest:  harvest silage, ","primary",NA
+"91","827","Soybean, grain",45,"bu/ac","Annual, broadleaf, warm season, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary","2"
+"92","828","Strawberry",20000,"lbs/ac","Perennial, low growing above ground production,
+suggest harvest, Harvest hand pick, ","primary",NA
+"93","829","Sugarbeet, seed production",2600,"lb/ac","Annual, root crop production,
+suggest harvest, harvest dig root crop,","primary",NA
+"94","831","Sugarbeet, sugar",20,"ton/ac","Annual, root crop production, suggest harvest, harvest dig root crop,","primary","51"
+"95","830","Sugarbeet, sugar, released",20,"ton/ac","Annual, root crop production, released growth with harvest or spray termination of previous crop.
+suggest harvest, harvest dig root crop, ","primary",NA
+"96","832","Sugarcane, sugar",34,"ton/ac Cane","Perennial, warm season, sugar production, suggest harvest:  Harvest, sugarcane,","primary",NA
+"97","833","Sunflower",1400,"lb/ac","Annual, warm season broadleaf, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary",NA
+"98","834","Taro, Bunglong",17000,"lbs/ac","Annual, root crop production, suggest harvest, harvest dig root crop,","primary",NA
+"99","835","Teff, grain",800,"lb/ac","Annual, broadleaf, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary",NA
+"100","836","Teff, summer, forage",3,"ton/ac","Perennial, warm season grass, hay production,
+suggest harvest oprn: Harvest, hay, grass or legume,","primary",NA
+"101","838","Timothy, hay",2,"ton/ac","Perennial, warm season grass, hay production,
+suggest harvest oprn: Harvest, hay, grass or legume, ","primary",NA
+"102","837","Timothy, hay, released",2,"ton/ac","Perennial, grass, hay production, Harvest suggest:  harvest hay, grass or legume, ","primary",NA
+"103","839","Tobacco, burley",2100,"lbs/ac","Annual, leafy crop, suggest harvest:  harvest manual or mechanical leafy crop final, ","primary",NA
+"104","840","Tobacco, dark",2100,"lbs/ac","Annual, leafy crop, suggest harvest:  harvest manual or mechanical leafy crop final, ","primary",NA
+"105","841","Tobacco, flue cured",2100,"lbs/ac","Annual, leafy crop, suggest harvest:  harvest manual or mechanical leafy crop final, ","primary",NA
+"106","842","Tomato, fresh, cwt",300,"cwt/ac","Annual, broadleaf, above ground vegetable production,
+suggest harvest, harvest hand pick last or mechanical, ","primary",NA
+"107","843","Tomato, processing, tons",25,"ton/ac","Annual, broadleaf, above ground vegetable production,
+suggest harvest, harvest hand pick last or mechanical, ","primary",NA
+"108","844","Triticale, grain",40,"bu/ac","Annual, cool season grass, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary",NA
+"109","845","Vegetable, eg broccoli, cauliflower",18300,"lbs/ac","Annual, broadleaf, above ground vegetable, florets and stem,  example:  brocolli, cauliflower, celery,
+suggest harvest:  Harvest, head, floret crop, manual or mechanical, ","primary",NA
+"110","846","Vegetable, head, eg cabbage",39000,"lbs/ac","Annual, broadleaf, above ground vegetable, heads, harvest suggest:  harvest ,
+example:  Cabbage, head lettuce, suggest harvest:  Harvest, head, floret crop, manual or mechanical,","primary",NA
+"111","847","Vegetable, root, eg turnip",1800,"lbs/ac","Annual, vegetable root crop production, suggest harvest, harvest dig root crop, ","primary",NA
+"112","848","Vegetable, root, seed production",350,"lb/ac","Annual, broadleaf, root crop for seed production,
+suggest harvest:  Harvest, perennial, grass or legume seed, ","primary",NA
+"113","850","Vegetables, leafy, eg spinach",35300,"lbs/ac","Annual, broadleaf, above ground leafy crop harvest, example:  lettuce, leaf, spinach, collard greens,
+suggest harvest:  Harvest, leafy crops, manual or mechanical, ","primary",NA
+"114","849","Vegetable, vine, eg squash",31700,"lbs/ac","Annual, broadleaf vine crop, above ground vegetable production,
+suggest harvest, harvest hand pick last or mechanical, ","primary",NA
+"115","851","Weeds, spring, summer",2000,"lbs/ac","Annual, warm season weed growth, start with begin growth and select as a temporary crop,
+terminate with sprayer or tillage, ","cover",NA
+"116","852","Weeds, winter",1000,"lbs/ac","Annual, cool season weed growth, start with begin growth and select as a temporary crop,
+terminate with sprayer or tillage, ","cover",NA
+"117","853","Wheat, spring, grain",30,"bu/ac","Annual, cool season grass, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary","9"
+"118","854","Wheat, winter, grain",40,"bu/ac","Annual, cool season grass, grain production,
+suggest harvest oprn: Harvest, killing crop with percent standing stubble, ","primary","3"
